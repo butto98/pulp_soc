@@ -150,6 +150,10 @@ module pulp_soc import dm::*; #(
     output logic [191:0]                  gpio_cfg_o,
     output logic                          uart_tx_o,
     input logic                           uart_rx_i,
+    //
+    output logic                          uart_rts_o,
+    input  logic                          uart_cts_i,
+    //
     input logic                           cam_clk_i,
     input logic [7:0]                     cam_data_i,
     input logic                           cam_hsync_i,
@@ -651,6 +655,10 @@ module pulp_soc import dm::*; #(
         //UART
         .uart_tx                ( uart_tx_o              ),
         .uart_rx                ( uart_rx_i              ),
+        //
+        .uart_rts               ( uart_rts_o             ),
+        .uart_cts               ( uart_cts_i             ),
+        //
 
         //I2C
         .i2c_scl_i              ( i2c_scl_i              ),

@@ -88,6 +88,10 @@ module udma_subsystem
     // UART
     input  logic          [N_UART-1:0] uart_rx_i,
     output logic          [N_UART-1:0] uart_tx_o,
+    //
+    output logic          [N_UART-1:0] uart_rts_o,
+    input  logic          [N_UART-1:0] uart_cts_i,
+    //
 
     // SDIO
     output logic                       sdio_clk_o,
@@ -458,6 +462,11 @@ module udma_subsystem
 
                 .uart_tx_o           ( uart_tx_o[g_uart]                       ),
                 .uart_rx_i           ( uart_rx_i[g_uart]                       ),
+                //
+                .uart_rts_o          ( uart_rts_o[g_uart]                      ),
+                .uart_cts_i          ( uart_cts_i[g_uart]                      ),
+                //
+
 
                 .cfg_data_i          ( s_periph_data_to                        ),
                 .cfg_addr_i          ( s_periph_addr                           ),

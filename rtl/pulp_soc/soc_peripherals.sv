@@ -104,6 +104,12 @@ module soc_peripherals #(
     // input  logic [N_UART-1:0]          uart_rx,
     output logic           uart_tx,
     input  logic           uart_rx,
+    //
+    // output logic [N_UART-1:0]          uart_rts,
+    // input  logic [N_UART-1:0]          uart_cts,
+    output logic           uart_rts,
+    input  logic           uart_cts,
+    //
 
 
     //I2C
@@ -507,6 +513,10 @@ module soc_peripherals #(
 
         .uart_rx_i        ( uart_rx              ),
         .uart_tx_o        ( uart_tx              ),
+        //
+        .uart_rts_o       ( uart_rts             ),
+        .uart_cts_i       ( uart_cts             ),
+        //
 
         .i2c_scl_i        ( i2c_scl_i            ),
         .i2c_scl_o        ( i2c_scl_o            ),
